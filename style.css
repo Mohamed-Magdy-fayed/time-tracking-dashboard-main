@@ -1,0 +1,304 @@
+
+:root{
+    /* Primary */
+    --clr-blue: hsl(246, 80%, 60%);
+    --clr-Orange: hsl(15, 100%, 70%);
+    --clr-Soft-blue: hsl(195, 74%, 62%);
+    --clr-Light-red: hsl(348, 100%, 68%);
+    --clr-Lime-green: hsl(145, 58%, 55%);
+    --clr-Violet: hsl(264, 64%, 52%);
+    --clr-Soft-orange: hsl(43, 84%, 65%);
+    /* Neutral */
+    --clr-Very-dark-blue: hsl(226, 43%, 10%);
+    --clr-Dark-blue: hsl(235, 46%, 20%);
+    --clr-Desaturated-blue: hsl(235, 45%, 61%);
+    --clr-Pale-Blue: hsl(236, 100%, 87%);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    background: var(--clr-Very-dark-blue);
+}
+
+.info-container{
+    background-color: var(--clr-Dark-blue);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1.2rem;
+}
+.info{
+    background-color: var(--clr-blue);
+    display: flex;
+    flex-direction: row;
+    border-radius: 1rem;
+}
+.info img {
+    height: 6rem;
+    width: 6rem;
+    margin: 2rem 1rem 2rem 2rem;
+    border-radius: 50%;
+    border: 0.2rem solid white;
+}
+.name{
+    margin: auto 2rem auto 0;
+}
+.name span{
+    color: var(--clr-Pale-Blue);
+}
+.name h2{
+    color: whitesmoke;
+    font-size: 1.2rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+}
+.times{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.times button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: var(--clr-Desaturated-blue);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1.6rem 0 1.6rem 0;
+    transition: all 200ms ease-in-out;
+}
+.times button:hover {
+    color: whitesmoke;
+}
+.times .active {
+    color: whitesmoke;
+}
+
+.time-container{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1.2rem;
+}
+.svg{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    align-items: center;
+    height: 2rem;
+}
+.svg::after{
+    content: "";
+    position: absolute;
+    top: 90%;
+    
+    left: 0;
+    background-color: inherit;
+    z-index: -1;
+    height: 1rem;
+    width: 100%;
+}
+.orange{
+    background-color: var(--clr-Orange);
+}
+.teal{
+    background-color: var(--clr-Soft-blue);
+}
+.red{
+    background-color: var(--clr-Light-red);
+}
+.green{
+    background-color: var(--clr-Lime-green);
+}
+.Violet{
+    background-color: var(--clr-Violet);
+}
+.yellow{
+    background-color: var(--clr-Soft-orange);
+}
+
+
+.time-details{
+    background-color: var(--clr-Dark-blue);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    transition: all 200ms ease-in-out;
+}
+.time-details:hover {
+    background-color: hsl(235, 46%, 40%);
+}
+.item {
+    padding: 0.4rem 1.4rem 0 1.4rem;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.item h3{
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+}
+.item button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--clr-Pale-Blue);
+    font-size: 1.4rem;
+}
+.item button:hover {
+    color: white;
+}
+.last-week{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.4rem 1.4rem 1.4rem;
+}
+.current{
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+}
+.previous{
+    color: var(--clr-Pale-Blue);
+    font-size: 90%;
+}
+
+.attribution {
+    color: var(--clr-Pale-Blue);
+    font-size: 11px; 
+    text-align: center;
+}
+.attribution a {
+    color: var(--clr-Desaturated-blue);
+}
+
+@media screen and (min-width: 48rem) {
+    .app {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "top top"
+        "mid mid"
+        "mid mid"
+        "mid mid"
+        "mid mid"
+        "end end";
+    }
+    .info-container {
+        grid-area: top;
+    }
+    .attribution {
+        grid-area: end;
+    }
+}
+
+@media screen and (min-width: 64rem), screen and (min-width: 48.1rem) {
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        position: relative;
+    }
+    .app{
+        height: 80%;
+        position: absolute;
+        justify-self: center;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(4, 18rem);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+        "main top top top"
+        "main mid mid mid"
+        "end end end end";
+    }
+    .info-container {
+        grid-area: main;
+        height: 95%;
+    }
+    .info{
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        height: 100%;
+    }
+    .info img {
+        margin-left: 2rem;
+        margin-bottom: 3rem;
+        height: 5rem;
+        width: 5rem;
+    }
+    .name{
+        padding-left: 2rem;
+        flex-grow: 1;
+    }
+    .name h2{
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    .times{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 2rem;
+    }
+    .times button {
+        padding: 0;
+        margin: 2rem 0 0 2rem;
+    }
+    .last-week{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .time-container{
+        height: 90%;
+        width: 90%;
+        margin: 0;
+    }
+    .time-details{
+        flex-grow: 1;
+    }
+    .svg {
+        height: 3rem;
+    }
+    .item{
+        padding: 0;
+    }
+    .item h3 {
+        padding: 0;
+        margin: 0;
+    }
+    .last-week{
+        padding: 0;
+    }
+    .time-details{
+        padding: 2rem;
+    }
+    .current {
+        font-size: 4rem;
+    }
+    .attribution {
+        position: absolute;
+        bottom: 0;
+    }
+}
