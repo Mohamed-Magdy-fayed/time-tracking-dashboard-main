@@ -1,4 +1,4 @@
-let requestURL = '/data.json';
+let requestURL = 'data.json';
 
 let request = new XMLHttpRequest();
 let w = 'weekly';
